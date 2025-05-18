@@ -33,7 +33,7 @@ const PieChartView = () => {
         : top5Genres;
     console.log("finalGenres", finalGenres);
     setGenres(finalGenres);
-  }, []);
+  }, [playlist]);
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center", padding: "20px" }}>

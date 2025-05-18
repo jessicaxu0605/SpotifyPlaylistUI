@@ -1,4 +1,5 @@
 import { PieChart } from "@mui/x-charts/PieChart";
+import Box from "@mui/material/Box";
 import { useContext, useState, useEffect } from "react";
 import PlaylistContext from "../PlaylistContext";
 import useSpotifyApi from "../api/useSpotifyApi";
@@ -35,19 +36,21 @@ const PieChartView = () => {
   }, []);
 
   return (
-    <PieChart
-      series={[
-        {
-          data: genres.map((genre) => ({
-            id: genre.genre,
-            value: genre.count,
-            label: genre.genre,
-          })),
-        },
-      ]}
-      width={200}
-      height={200}
-    />
+    <Box sx={{ display: "flex", justifyContent: "center", padding: "20px" }}>
+      <PieChart
+        series={[
+          {
+            data: genres.map((genre) => ({
+              id: genre.genre,
+              value: genre.count,
+              label: genre.genre,
+            })),
+          },
+        ]}
+        width={200}
+        height={200}
+      />
+    </Box>
   );
 };
 

@@ -68,12 +68,21 @@ const TableView = () => {
   };
 
   return (
-    <TableContainer>
-      <Table>
+    <TableContainer sx={{ height: "100%", overflow: "auto" }}>
+      <Table stickyHeader>
         <TableHead>
           <TableRow>
             {columns.map((column) => (
-              <TableCell key={column.id} sx={{ fontWeight: "bold" }}>
+              <TableCell
+                key={column.id}
+                sx={{
+                  fontWeight: "bold",
+                  backgroundColor: "background.paper",
+                  position: "sticky",
+                  top: 0,
+                  zIndex: 1,
+                }}
+              >
                 <TableSortLabel
                   active={orderBy === column.id}
                   direction={orderBy === column.id ? order : "asc"}

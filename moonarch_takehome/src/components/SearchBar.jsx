@@ -41,10 +41,9 @@ const SearchBar = () => {
         sx={{
           width: "100%",
         }}
-        placeholder="Search Google Maps"
+        placeholder="Search for a playlist"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        inputProps={{ "aria-label": "search google maps" }}
       />
       <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
         <SearchIcon />
